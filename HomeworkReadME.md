@@ -1,0 +1,1 @@
+In this homework I created a note taking app using express and node.js. I wasn't able to get the app to be fully functionable as it lacks the save function. I will come back to this homework and see how I can fix it's functionality. 
