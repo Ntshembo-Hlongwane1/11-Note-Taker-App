@@ -5,6 +5,7 @@ const path = require("path");
 const routes = require("./Develop/routes/index")
 const { DH_CHECK_P_NOT_SAFE_PRIME } = require("constants");
 const cors = require("cors");
+const AppRoutes = require('./Develop/routes/index')
 
 const app = express();
 var PORT = process.env.PORT || 4023;
@@ -14,6 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("./Develop/routes/", routes));
 app.use(cors());
+
+
+app.use(AppRoutes)
 // //Setting routes for APIs
 // //This gets notes saved and joins it in db.json
 // app.get("/api/notes", (req, res) => {
@@ -51,7 +55,7 @@ app.use(cors());
 //     res.sendFile(path.join(__dirname, "./public/notes.html"));
 // });
 
-// //Start listen
-// app.listen(PORT, function () {
-//     console.log("App listening on PORT: " + PORT);
-// });
+//Start listen
+app.listen(PORT, function () {
+    console.log("App listening on PORT: " + PORT);
+});
